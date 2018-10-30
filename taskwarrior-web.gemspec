@@ -29,13 +29,12 @@ Gem::Specification.new do |s|
   s.add_dependency('icalendar')
   s.add_dependency('tzinfo')
 
-  s.add_development_dependency('rake')
+  s.add_development_dependency('rake', '< 11')
   s.add_development_dependency('rack-test')
-  s.add_development_dependency('rspec')
+  s.add_development_dependency('rspec', '~> 2')
   s.add_development_dependency('rspec-html-matchers')
 
-  s.files         = `git ls-files`.split("\n")
-  s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
-  s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
+  s.files         = Dir.glob("{bin,lib}/**/*") + %w(LICENSE README.md)
+  s.executables   = Dir.glob("bin/*").map{ |f| File.basename(f) }
   s.require_paths = ["lib"]
 end
