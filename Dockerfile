@@ -1,4 +1,4 @@
-FROM ruby:2.2.5-alpine
+FROM ruby:2.5-alpine
 
 ADD Gemfile /taskwarrior-web/Gemfile
 ADD taskwarrior-web.gemspec /taskwarrior-web/taskwarrior-web.gemspec
